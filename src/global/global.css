@@ -1,0 +1,98 @@
+:root {
+  /* Mono */
+  --mono-70: #13152c;
+  --mono-50: #313436;
+  --mono-30: #5b6063;
+  --mono-10: #ececec;
+  --mono-05: #f1f2f3;
+  --white: #ffffff;
+  /* Primary */
+  --primary-70: #4331b4;
+  --primary-50: #6d5dd3;
+  --primary-30: #a59be4;
+  --primary-10: #dad7f5;
+  --primary-05: #edebfa;
+  /* Warning */
+  --warning-70: #e69c45;
+  --warning-50: #ffa942;
+  --warning-05: #fff8ef;
+  /* Danger */
+  --danger-70: #bd2c2c;
+  --danger-50: #dd3434;
+  --danger-05: #feeaea;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  color: var(--mono-70);
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+/* Containers */
+/* Optional to add containers in global */
+/* Adding for demo purpose only */
+.container {
+  margin: 200px auto;
+  padding: 0 500px;
+}
+.container .row {
+  margin: 24px auto;
+  display: flex;
+}
+
+.container .row.space-between {
+  justify-content: space-between;
+}
+.container .row.center {
+  justify-content: center;
+}
+.container .row.v-center {
+  align-items: center;
+}
+
+@media (max-width: 1800px) {
+  .container {
+    padding: 0 400px;
+  }
+}
+@media (max-width: 1650px) {
+  .container {
+    padding: 0 300px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .container {
+    padding: 0 200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0 32px;
+  }
+}

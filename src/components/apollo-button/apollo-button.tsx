@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'apollo-button',
@@ -17,5 +17,4 @@ export class ApolloButton {
       </button>
     );
   }
-
 }

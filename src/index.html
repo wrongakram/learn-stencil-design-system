@@ -4,22 +4,38 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
     <title>Stencil Component Starter</title>
-    <link rel="stylesheet" href="/build/apollo-design-system.css">
+    <link rel="stylesheet" href="/build/apollo-design-system.css" />
     <script type="module" src="/build/apollo-design-system.esm.js"></script>
     <script nomodule src="/build/apollo-design-system.js"></script>
   </head>
   <body>
+    <!-- Modals -->
     <div class="container">
       <div class="row">
-        <h3>Buttons</h3>
+        <h3>Modals</h3>
       </div>
-      <div class="row space-between">
-        <apollo-button id="primary" text="Start Stream" appearance="primary"></apollo-button>
-        <apollo-button text="Send" appearance="secondary"></apollo-button>
-        <apollo-button text="Record" appearance="tertiary"></apollo-button>
-        <apollo-button text="End Stream" appearance="warning"></apollo-button>
-        <apollo-button text="Delete VOD" appearance="danger"></apollo-button>
+      <div class="row">
+        <apollo-button id="open-modal" text="Open Modal" appearance="primary"></apollo-button>
+        <apollo-modal buttons='[{"text": "Confirm"},{"text": "Cancel"}]' header="Modal Header" appearance="primary">
+          <p>
+            Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some
+            reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected,
+            you and I. We're on the same curve, just on opposite ends.
+          </p>
+        </apollo-modal>
       </div>
     </div>
   </body>
+  <script>
+    var button = document.querySelector('#open-modal');
+    var modal = document.querySelector('apollo-modal');
+
+    button.addEventListener('click', function () {
+      modal.isopen = true;
+    });
+
+    modal.addEventListener('action', function () {
+      console.log('Confirm pressed');
+    });
+  </script>
 </html>

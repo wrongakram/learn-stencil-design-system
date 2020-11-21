@@ -10,6 +10,13 @@ export namespace Components {
         "appearance": string;
         "text": string;
     }
+    interface ApolloModal {
+        "appearance": string;
+        "buttons": string;
+        "closeIcon": string;
+        "header": string;
+        "isopen": boolean;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -32,6 +39,12 @@ declare global {
         prototype: HTMLApolloButtonElement;
         new (): HTMLApolloButtonElement;
     };
+    interface HTMLApolloModalElement extends Components.ApolloModal, HTMLStencilElement {
+    }
+    var HTMLApolloModalElement: {
+        prototype: HTMLApolloModalElement;
+        new (): HTMLApolloModalElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -40,6 +53,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "apollo-button": HTMLApolloButtonElement;
+        "apollo-modal": HTMLApolloModalElement;
         "my-component": HTMLMyComponentElement;
     }
 }
@@ -47,6 +61,14 @@ declare namespace LocalJSX {
     interface ApolloButton {
         "appearance"?: string;
         "text"?: string;
+    }
+    interface ApolloModal {
+        "appearance"?: string;
+        "buttons"?: string;
+        "closeIcon"?: string;
+        "header"?: string;
+        "isopen"?: boolean;
+        "onAction"?: (event: CustomEvent<any>) => void;
     }
     interface MyComponent {
         /**
@@ -64,6 +86,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "apollo-button": ApolloButton;
+        "apollo-modal": ApolloModal;
         "my-component": MyComponent;
     }
 }
@@ -72,6 +95,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "apollo-button": LocalJSX.ApolloButton & JSXBase.HTMLAttributes<HTMLApolloButtonElement>;
+            "apollo-modal": LocalJSX.ApolloModal & JSXBase.HTMLAttributes<HTMLApolloModalElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }
